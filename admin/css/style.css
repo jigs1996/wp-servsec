@@ -1,0 +1,34 @@
+.svs-tophead {
+	text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+    background: #fff;
+    border-bottom: 1px solid #e2e4e7;
+    padding: 15px;
+}
+.svs-body{
+	max-width: 800px;
+	margin: auto;
+	border: 1px solid #ccd0d4;
+}
+.svs-accordian-wrapper{
+	margin-bottom: 1px;
+}
+.svs-accordian-wrapper .svs-accordian-title{
+	background: #fff;
+    border: 0;
+    color: #32373c;
+    cursor: pointer;
+    display: flex;
+    font-weight: 400;
+    margin: 0;
+    padding: 1em 3.5em 1em 1.5em;
+    position: relative;
+    text-align: left;
+    align-items: center;
+    justify-content: space-between;
+}
+.svs-accordian-wrapper .svs-accordian-description{
+	padding: 15px 15px 25px;
+	display: none;
+}

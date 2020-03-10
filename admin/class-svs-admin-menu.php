@@ -67,22 +67,18 @@ class SVS_Admin_Menu
 	}
 	protected function register_main_menu()
 	{
-		add_menu_page( $this->page_title, $this->menu_title, $this->capability, $this->menu_slug, array($this, 'display_main_menu'), $this->icon, $this->position );
+		add_menu_page( $this->page_title, $this->menu_title, $this->capability, $this->menu_slug, array($this, 'display_dashboard'), $this->icon, $this->position );
 	}
 
-	public function display_main_menu()
+	public function display_dashboard()
 	{
-		echo 'hello world';
+		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}
 
 	protected function register_submenu()
 	{
 		add_submenu_page( $this->menu_slug, 'Dashboard', 'Dashboard', $this->capability, $this->menu_slug );
-		add_submenu_page( $this->menu_slug, 'Headers', 'Headers', $this->capability, 'wpsvs_headers' );
+		add_submenu_page( $this->menu_slug, 'Help', 'Help', $this->capability, 'wpsvs_headers' );
 	}
-
-	protected function display_dashboard()
-	{
-		echo 'hello world';
-	}
+	
 }
