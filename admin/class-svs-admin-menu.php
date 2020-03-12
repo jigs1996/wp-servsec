@@ -72,6 +72,9 @@ class SVS_Admin_Menu
 
 	public function display_dashboard()
 	{
+		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
+		$test = new HeaderTest( 'https://devnetwork.io' );
+		$results = $test->runAll();
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}
 
