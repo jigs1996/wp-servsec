@@ -7,7 +7,7 @@
  * @package    wp-servsec
  * @subpackage wp-servsec/includes
  */
-class XFrameOption
+class XFrameOption implements HeaderInterface
 {
 	/**
 	 * Name of the header
@@ -19,26 +19,26 @@ class XFrameOption
 	private $header_name;
 
 	/**
-	 * Resources of main domain
+	 * headers of main domain
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $resources    Resources of main domain
+	 * @var      string    $headers    Resources of main domain
 	 */
-	private $resources;
+	private $headers;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 * @param      string    $header_name       The name of this plugin.
-	 * @param      string    $resources    The resources of this plugin.
+	 * @param      string    $headers    The headers of this plugin.
 	 */
 	
-	function __construct( $header_name, $resources )
+	function __construct( $headers )
 	{
-		$this->header_name = $header_name;
-		$this->resources = $resources;
+		$this->header_name = 'x-frame-options';
+		$this->headers = $headers;
 	}
 
 	/**
@@ -48,6 +48,6 @@ class XFrameOption
 	 */
 	public function test()
 	{
-		
+		return array_key_exists($this->header_name, $this->headers)?1:0;
 	}
 }

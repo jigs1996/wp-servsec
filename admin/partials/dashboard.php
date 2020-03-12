@@ -50,7 +50,7 @@
 			<div class="svs-accordian-wrapper">
 				<div class="svs-accordian-title">
 					<span>X-Frame-Options</span>
-					<span>Active</span>
+					<span><?php echo !empty($results['XFrameOption'])?'Active':'Not Active' ?></span>
 				</div>
 				<div class="svs-accordian-description">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
