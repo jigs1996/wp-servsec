@@ -50,4 +50,9 @@ class XFrameOption implements HeaderInterface
 	{
 		return array_key_exists($this->header_name, $this->headers)?1:0;
 	}
+
+	public function getName()
+	{
+		return $this->header_name;
+	}
 }

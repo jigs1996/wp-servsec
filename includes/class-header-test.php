@@ -16,6 +16,7 @@ class HeaderTest
 	private $headers;
 	
 	private $objs;
+
 	function __construct( $host )
 	{
 		$this->$objs = array();
@@ -29,24 +30,30 @@ class HeaderTest
 	
 	public function run()
 	{
-		foreach (glob("headers/*.php") as $filename) {
-		    include $filename;
-		}
 		
 	}
 
 	public function runAll()
 	{
+		include PLUGIN_ROOT_PATH . '/includes/interface/class-header-interface.php';
+
 		foreach (glob(PLUGIN_ROOT_PATH . '/includes/headers/*.php') as $filename) {
 		    include $filename;
+		    $class_name = explode('-', str_replace('.php', '', basename($filename)));
+		    unset($class_name[0]);
+
+		    $class_name = implode('', array_map(function($var){
+		    	return ucfirst($var);
+		    }, $class_name));
+		    
+			$this->objs[] = new $class_name($this->headers);
 		}
 
-		$this->objs[] = new XFrameOption($this->headers);
 
 		$tempArray = [];
 
 		foreach ($this->objs as $classtest) {
-			$tempArray[get_class($classtest)] = $classtest->test();
+			$tempArray[$classtest->getName()] = $classtest->test();
 		}
 
 		return $tempArray;
