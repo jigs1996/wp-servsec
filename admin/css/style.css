@@ -32,3 +32,9 @@
 	padding: 15px 15px 25px;
 	display: none;
 }
+.status-active{
+    color: #34b334;
+}
+.status-not-active{
+    color: #b52727;
+}

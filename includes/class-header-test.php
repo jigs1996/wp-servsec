@@ -41,11 +41,10 @@ class HeaderTest
 		    include $filename;
 		    $class_name = explode('-', str_replace('.php', '', basename($filename)));
 		    unset($class_name[0]);
-
 		    $class_name = implode('', array_map(function($var){
 		    	return ucfirst($var);
 		    }, $class_name));
-		    
+
 			$this->objs[] = new $class_name($this->headers);
 		}
 
