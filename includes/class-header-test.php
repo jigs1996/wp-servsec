@@ -35,7 +35,8 @@ class HeaderTest
 
 	public function runAll()
 	{
-		include PLUGIN_ROOT_PATH . '/includes/interface/class-header-interface.php';
+		include PLUGIN_ROOT_PATH . '/includes/helper/class-header-interface.php';
+		include PLUGIN_ROOT_PATH . '/includes/helper/class-header.php';
 
 		foreach (glob(PLUGIN_ROOT_PATH . '/includes/headers/*.php') as $filename) {
 		    include $filename;
