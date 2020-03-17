@@ -18,6 +18,13 @@ class XFrameOption implements HeaderInterface
 	 */
 	private $header_name;
 
+	/**
+	 * Key of the header
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $header_key   Name of the key.
+	 */
 	private $header_key;
 
 	/**
@@ -45,8 +52,6 @@ class XFrameOption implements HeaderInterface
 	}
 
 	/**
-	 * run this header test
-	 *
 	 * @since    1.0.0
 	 */
 	public function test()
@@ -54,30 +59,49 @@ class XFrameOption implements HeaderInterface
 		return array_key_exists($this->header_key, $this->headers)?1:0;
 	}
 
+	/**
+	 * @since    1.0.0
+	 */
 	public function getValue()
 	{
 		return $this->headers[$this->getKey()];
 	}
 
+	/**
+	 * @since    1.0.0
+	 */
 	public function getPossibleValue()
 	{
 		return [];
 	}
 
+	/**
+	 * @since    1.0.0
+	 */
 	public function getDescription()
 	{
 		return '';	
 	}
 
+	/**
+	 * @since    1.0.0
+	 */
 	public function getRecommandedValue()
 	{
 		return '';
 	}
 
+	/**
+	 * @since    1.0.0
+	 */
 	public function getName()
 	{
 		return $this->header_name;
 	}
+
+	/**
+	 * @since    1.0.0
+	 */
 	public function getKey()
 	{
 		return $this->header_key;
