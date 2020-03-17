@@ -52,7 +52,15 @@ class HeaderTest
 		$tempArray = [];
 
 		foreach ($this->objs as $classtest) {
-			$tempArray[$classtest->getName()] = $classtest->test();
+			$tempArray[$classtest->getKey()] = [ 
+				'is_active' => $classtest->test(),
+				'key' => $classtest->getKey(),
+				'name' => $classtest->getName(),
+				'value' => $classtest->getValue(),
+				'description' => $classtest->getDescription(),
+				'possible_value' => $classtest->getPossibleValue(),
+				'recommanded_value' => $classtest->getRecommandedValue()
+			];
 		}
 
 		return $tempArray;

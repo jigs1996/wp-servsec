@@ -14,6 +14,8 @@ class XContentTypeOptions implements HeaderInterface
 	 */
 	private $header_name;
 
+	private $header_key;
+
 	/**
 	 * headers of main domain
 	 *
@@ -33,7 +35,8 @@ class XContentTypeOptions implements HeaderInterface
 	
 	function __construct( $headers )
 	{
-		$this->header_name = 'x-content-type-options';
+		$this->header_name = 'X-Content-Type-Options';
+		$this->header_key = 'x-content-type-options';
 		$this->headers = $headers;
 	}
 
@@ -44,11 +47,41 @@ class XContentTypeOptions implements HeaderInterface
 	 */
 	public function test()
 	{
-		return array_key_exists($this->header_name, $this->headers)?1:0;
+		return array_key_exists($this->header_key, $this->headers)?1:0;
+	}
+
+	public function getValue()
+	{
+		return $this->headers[$this->getKey()];
+	}
+
+	public function getPossibleValue()
+	{
+		return [];
+	}
+
+	public function getDescription()
+	{
+		return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' ;	
+	}
+
+	public function getRecommandedValue()
+	{
+		return '';
 	}
 
 	public function getName()
 	{
 		return $this->header_name;
+	}
+
+	public function getKey()
+	{
+		return $this->header_key;
 	}
 }

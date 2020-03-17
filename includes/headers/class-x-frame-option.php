@@ -18,6 +18,8 @@ class XFrameOption implements HeaderInterface
 	 */
 	private $header_name;
 
+	private $header_key;
+
 	/**
 	 * headers of main domain
 	 *
@@ -37,7 +39,8 @@ class XFrameOption implements HeaderInterface
 	
 	function __construct( $headers )
 	{
-		$this->header_name = 'x-frame-options';
+		$this->header_name = 'X-Frame-Options';
+		$this->header_key = 'x-frame-options';
 		$this->headers = $headers;
 	}
 
@@ -48,11 +51,35 @@ class XFrameOption implements HeaderInterface
 	 */
 	public function test()
 	{
-		return array_key_exists($this->header_name, $this->headers)?1:0;
+		return array_key_exists($this->header_key, $this->headers)?1:0;
+	}
+
+	public function getValue()
+	{
+		return $this->headers[$this->getKey()];
+	}
+
+	public function getPossibleValue()
+	{
+		return [];
+	}
+
+	public function getDescription()
+	{
+		return '';	
+	}
+
+	public function getRecommandedValue()
+	{
+		return '';
 	}
 
 	public function getName()
 	{
 		return $this->header_name;
+	}
+	public function getKey()
+	{
+		return $this->header_key;
 	}
 }
