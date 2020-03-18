@@ -10,12 +10,12 @@ This is simple readme about how we will go to next phase. will goto  phase wise.
 * Lists of response header
 	* *X-Frame-Options
 	*	*X-Content-Type-Options
-	*	HTTP Strict Transport Security (HSTS) [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-	*	Content Security Policy (CSP) [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-	*	Cross Site Scripting Protection (X-XSS) [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
-	*	Expect-CT [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT)
-	*	Feature-Policy [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
-	*	Public key ping [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
+	*	[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+	*	[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+	*	[Cross Site Scripting Protection (X-XSS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+	*	[Expect-CT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT)
+	*	[Feature-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
+	*	[Public key ping](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
 	*	x-page-speed
   
   
