@@ -10,14 +10,13 @@ This is simple readme about how we will go to next phase. will goto  phase wise.
 * Lists of response header
 	* *X-Frame-Options
 	*	*X-Content-Type-Options
-	*	HTTP Strict Transport Security (HSTS)
-	*	Content Security Policy (CSP)
-	*	Cross Site Scripting Protection (X-XSS)
-	*	X-XSS-Protection
-	*	Expect-CT
-	*	Feature-Policy
-	*	Public key ping
-	* x-page-speed
+	*	[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+	*	[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+	*	[Cross Site Scripting Protection (X-XSS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
+	*	[Expect-CT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT)
+	*	[Feature-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
+	*	[Public key ping](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
+	*	x-page-speed
   
   
   **Note:**: (*) items are already implemeneted

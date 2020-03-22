@@ -7,7 +7,7 @@
  * @package    wp-servsec
  * @subpackage wp-servsec/includes
  */
-class Header implements HeaderInterface
+abstract class Header implements HeaderInterface
 {
 	/**
 	 * Name of the header
@@ -78,21 +78,15 @@ class Header implements HeaderInterface
 	/**
 	 * @since    1.0.0
 	 */
-	public function getDescription(){
-		return '';
-	}
+	abstract public function getDescription();
 
 	/**
 	 * @since    1.0.0
 	 */
-	public function getPossibleValue(){
-		return '';
-	}
+	abstract public function getPossibleValue();
 
 	/**
 	 * @since    1.0.0
 	 */
-	public function getRecommandedValue(){
-		return '';
-	}
+	abstract public function getRecommandedValue();
 }
