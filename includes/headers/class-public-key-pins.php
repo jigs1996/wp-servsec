@@ -15,12 +15,7 @@ class PublicKeyPins extends Header
 
 	public function getDescription()
 	{
-		return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' ;	
+		return '<code>HTTP Public Key Pinning (HPKP)</code> was a security feature that used to tell a web client to associate a specific cryptographic public key with a certain web server to decrease the risk of MITM attacks with forged certificates. It has been removed in modern browsers and is no longer supported.' ;	
 	}
 
 	public function getRecommandedValue()
