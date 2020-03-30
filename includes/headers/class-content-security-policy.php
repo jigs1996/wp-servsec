@@ -14,12 +14,7 @@ class ContentSecurityPolicy extends Header
 
 	public function getDescription()
 	{
-		return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' ;	
+		return '<b>Content Security Policy (CSP)</b> is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement to distribution of malware. <br/> For more information use this link: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy</a>' ;	
 	}
 
 	public function getRecommandedValue()

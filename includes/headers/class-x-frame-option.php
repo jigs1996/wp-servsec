@@ -27,7 +27,7 @@ class XFrameOption extends Header
 	 */
 	public function getDescription()
 	{
-		return '';	
+		return 'The <code>X-Frame-Options</code> HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a &lt;frame&gt;, &lt;iframe&gt;, &lt;embed&gt; or &lt;object&gt;. Sites can use this to avoid clickjacking attacks, by ensuring that their content is not embedded into other sites.';
 	}
 
 	/**
