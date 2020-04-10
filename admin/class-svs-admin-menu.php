@@ -109,8 +109,7 @@ class SVS_Admin_Menu
 	 */
 	protected function register_submenu()
 	{
-		add_submenu_page( $this->menu_slug, 'Dashboard', 'Dashboard', $this->capability, $this->menu_slug );
-		add_submenu_page( $this->menu_slug, 'Help', 'Help', $this->capability, 'wpsvs_headers' );
+		
 	}
 	
 }
