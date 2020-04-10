@@ -1,22 +1,11 @@
-This is simple readme about how we will go to next phase. will goto  phase wise. once we wimplemented necessory tests will upload to wordpress plugin repository.
-#  Phase 1
-* Response header test
-	* Check header is set or not
-	* Show which value is set
-	* Lists possible value for that header
-	* Recommanded value for that header
-	* Description of header 
-	* More details of that header will be individual blog of devnetwork.io with what is header, which security become clurnable if not set that header, what can be trouble some if you set that header.
-* Lists of response header
-	* *X-Frame-Options
-	*	*X-Content-Type-Options
-	*	[HTTP Strict Transport Security (HSTS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-	*	[Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
-	*	[Cross Site Scripting Protection (X-XSS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection)
-	*	[Expect-CT](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT)
-	*	[Feature-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
-	*	[Public key ping](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning)
-	*	x-page-speed
-  
-  
-  **Note:**: (*) items are already implemeneted
+# WP ServSec
+WP ServSec is WordPress plugin. Which use for check important header whether it's set or not. what that header value is set. which value is recommended for security user.
+
+# Installation
+You can download zip file and extract to `wp-content/plugins` directory. then you have to activate plugin, from WordPress admin dashboard
+
+# Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+# License
+[GPL V3]([https://choosealicense.com/licenses/gpl-3.0/])

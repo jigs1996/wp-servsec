@@ -1,7 +1,7 @@
 <?php
 
 /**
- * class XFO: X-Frame-Option to check and maintan all details about x frame option
+ * Header tst abstract class
  *
  * @since      1.0.0
  * @package    wp-servsec
@@ -44,7 +44,12 @@ abstract class Header implements HeaderInterface
 	}
 
 	/**
+	 * Run test and check header exist or not
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   test
+	 * @return   boolean [return either true/false]
 	 */
 	public function test()
 	{
@@ -52,7 +57,12 @@ abstract class Header implements HeaderInterface
 	}
 
 	/**
+	 * Return current header value
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getValue
+	 * @return   string [return current header value]
 	 */
 	public function getValue()
 	{
@@ -60,7 +70,12 @@ abstract class Header implements HeaderInterface
 	}
 
 	/**
+	 * Return header name
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getName
+	 * @return   string [return header name]
 	 */
 	public function getName()
 	{
@@ -68,7 +83,12 @@ abstract class Header implements HeaderInterface
 	}
 
 	/**
+	 * Return header key for testing and set in headers array
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getKey
+	 * @return   string [return header key for testing and set in headers array]
 	 */
 	public function getKey()
 	{
@@ -76,17 +96,32 @@ abstract class Header implements HeaderInterface
 	}
 
 	/**
+	 * Return description for header
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getDescription
+	 * @return   string [return description for header]
 	 */
 	abstract public function getDescription();
 
 	/**
+	 * Return possible value of header
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getPossibleValue
+	 * @return   array [return possible value of header]
 	 */
 	abstract public function getPossibleValue();
 
 	/**
+	 * Return recommanded value of header
+	 * 
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   getRecommandedValue
+	 * @return   string [return recommanded value of header]
 	 */
 	abstract public function getRecommandedValue();
 }

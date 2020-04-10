@@ -58,7 +58,8 @@ class SVS_Admin_Menu
 	private $position = 74;
 
 	/**
-	 * Create dashboard menu and register submenu 
+	 * Create dashboard menu and register submenu
+	 *  
 	 * @since    1.0.0
 	 * @access   public
 	 * @method  create

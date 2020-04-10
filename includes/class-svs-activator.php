@@ -19,7 +19,11 @@ class SVS_Activator
 {
 	
 	/**
+	 * run scripts on plugin activate
+	 *  
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   active
 	 */
 	public static function activate() {
 		
