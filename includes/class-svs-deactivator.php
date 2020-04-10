@@ -19,7 +19,11 @@ class SVS_Deactivator
 {
 	
 	/**
+	 * run scripts on plugin deactivate
+	 *  
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   deactivate
 	 */
 	public static function deactivate() {
 		

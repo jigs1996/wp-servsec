@@ -9,6 +9,7 @@ interface HeaderInterface
 	 * Run test and check header exist or not
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   test
 	 * @return   boolean [return either true/false]
 	 */
@@ -18,6 +19,7 @@ interface HeaderInterface
 	 * Return header name
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getName
 	 * @return   string [return header name]
 	 */
@@ -27,6 +29,7 @@ interface HeaderInterface
 	 * Return current header value
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getValue
 	 * @return   string [return current header value]
 	 */
@@ -36,6 +39,7 @@ interface HeaderInterface
 	 * Return header key for testing and set in headers array
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getKey
 	 * @return   string [return header key for testing and set in headers array]
 	 */
@@ -45,6 +49,7 @@ interface HeaderInterface
 	 * Return description for header
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getDescription
 	 * @return   string [return description for header]
 	 */
@@ -54,6 +59,7 @@ interface HeaderInterface
 	 * Return possible value of header
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getPossibleValue
 	 * @return   array [return possible value of header]
 	 */
@@ -63,6 +69,7 @@ interface HeaderInterface
 	 * Return recommanded value of header
 	 * 
 	 * @since    1.0.0
+	 * @access   public
 	 * @method   getRecommandedValue
 	 * @return   string [return recommanded value of header]
 	 */
