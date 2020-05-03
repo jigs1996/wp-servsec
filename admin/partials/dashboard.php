@@ -9,8 +9,13 @@
 				<div class="svs-accordian-wrapper">
 					<div class="svs-accordian-title">
 						<span><?= $header['name'] ?></span>
-						<?php $xfo = !empty($header['is_active'])?'Active':'Not Active'; ?>
-						<span class="status-<?= strtolower(str_replace(' ', '-', $xfo)) ?>"><?= $xfo ?></span>
+
+						<?php
+							$xfo = !empty($header['is_active']) ? $header['value'] : 'Not Active' ;
+							$class = !empty($header['is_active']) ? 'active' : 'not-active'; 
+						?>
+							
+						<span class="status-<?= $class ?>"><?= $xfo ?></span>
 					</div>
 					<div class="svs-accordian-description">
 						<?= $header['description'] ?>
