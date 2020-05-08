@@ -28,6 +28,12 @@ class SVS_Loader
 	 */
 	protected $filters;
 
+	/**
+	 * Define the hooks and filters array
+	 *
+	 * @since    1.0.0
+	 * @method   constructor
+	 */
 	function __construct()
 	{
 		$this->actions = array();
@@ -38,6 +44,8 @@ class SVS_Loader
 	 * Add a new action to the collection to be registered with WordPress.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   add_action
 	 * @param    string               $hook             The name of the WordPress action that is being registered.
 	 * @param    object               $component        A reference to the instance of the object on which the action is defined.
 	 * @param    string               $callback         The name of the function definition on the $component.
@@ -53,6 +61,8 @@ class SVS_Loader
 	 * Add a new filter to the collection to be registered with WordPress.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   add_filter
 	 * @param    string               $hook             The name of the WordPress filter that is being registered.
 	 * @param    object               $component        A reference to the instance of the object on which the filter is defined.
 	 * @param    string               $callback         The name of the function definition on the $component.
@@ -69,6 +79,7 @@ class SVS_Loader
 	 *
 	 * @since    1.0.0
 	 * @access   private
+	 * @method   add
 	 * @param    array                $hooks            The collection of hooks that is being registered (that is, actions or filters).
 	 * @param    string               $hook             The name of the WordPress filter that is being registered.
 	 * @param    object               $component        A reference to the instance of the object on which the filter is defined.
@@ -95,6 +106,8 @@ class SVS_Loader
 	 * Register the filters and actions with WordPress.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   run
 	 */
 	public function run() {
 

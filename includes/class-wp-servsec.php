@@ -51,6 +51,7 @@ class Wp_Servsec
 	 * the public-facing side of the site.
 	 *
 	 * @since    1.0.0
+	 * @method   constructor
 	 */
 	public function __construct()
 	{
@@ -68,10 +69,11 @@ class Wp_Servsec
 	}
 
     /**
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 *
+     * Return plugin name
+     * 
 	 * @since     1.0.0
+	 * @access    public
+	 * @method    get_plugin_name [ return plugin name ]
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name()
@@ -83,6 +85,8 @@ class Wp_Servsec
 	 * Retrieve the version number of the plugin.
 	 *
 	 * @since     1.0.0
+	 * @access    public
+	 * @method    get_version
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version()
@@ -94,6 +98,8 @@ class Wp_Servsec
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
+	 * @access    public
+	 * @method    get_loader
 	 * @return    SVS_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -105,6 +111,7 @@ class Wp_Servsec
 	 *
 	 * @since    1.0.0
 	 * @access   private
+	 * @method   load_dependencies
 	 */
 	private function load_dependencies()
 	{
@@ -129,6 +136,7 @@ class Wp_Servsec
 	 *
 	 * @since    1.0.0
 	 * @access   private
+	 * @method   define_admin_hooks
 	 */
 	private function define_admin_hooks() {
 
@@ -144,6 +152,8 @@ class Wp_Servsec
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   run
 	 */
 	public function run()
 	{

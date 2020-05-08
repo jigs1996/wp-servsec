@@ -45,6 +45,8 @@ class SVS_Admin
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   enqueue_styles
 	 */
 	public function enqueue_styles()
 	{
@@ -55,12 +57,21 @@ class SVS_Admin
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
+	 * @access   public
+	 * @method   enqueue_scripts
 	 */
 	public function enqueue_scripts()
 	{
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/script.js', array( 'jquery' ), $this->version, false );
 	}
 
+	/**
+	 * Register menu for dashboard
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   register_menu
+	 */
 	public function register_menu()
 	{
 		require_once plugin_dir_path( WPSERVSEC_PLUGIN_FILE ).'/admin/class-svs-admin-menu.php';

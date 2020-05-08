@@ -57,6 +57,13 @@ class SVS_Admin_Menu
 	 */
 	private $position = 74;
 
+	/**
+	 * Create dashboard menu and register submenu
+	 *  
+	 * @since    1.0.0
+	 * @access   public
+	 * @method  create
+	 */
 	public static function create()
 	{
 		if( !isset( self::$instance ) ){
@@ -65,11 +72,26 @@ class SVS_Admin_Menu
 			self::$instance->register_submenu();
 		}
 	}
+
+	/**
+	 * Register main menu
+	 * 
+	 * @since    1.0.0
+	 * @access   protected
+	 * @method   register_main_menu
+	 */
 	protected function register_main_menu()
 	{
 		add_menu_page( $this->page_title, $this->menu_title, $this->capability, $this->menu_slug, array($this, 'display_dashboard'), $this->icon, $this->position );
 	}
 
+	/**
+	 * Display main menu design
+	 * 
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   display_dashboard
+	 */
 	public function display_dashboard()
 	{
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
@@ -78,10 +100,16 @@ class SVS_Admin_Menu
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}
 
+	/**
+	 * Register sub menu
+	 * 
+	 * @since    1.0.0
+	 * @access   protected
+	 * @method   register_submenu
+	 */
 	protected function register_submenu()
 	{
-		add_submenu_page( $this->menu_slug, 'Dashboard', 'Dashboard', $this->capability, $this->menu_slug );
-		add_submenu_page( $this->menu_slug, 'Help', 'Help', $this->capability, 'wpsvs_headers' );
+
 	}
 	
 }

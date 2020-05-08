@@ -9,7 +9,7 @@
  * Plugin URI: https://devnetwork.io
  * Description: This plugin will scan your server and send you report for necessory security header missing and ssl/tls certificates info and expiration date
  * Version: 1.0.0
- * Author: Jignesh Sanghani
+ * Author: Jignesh Sanghani, Rahul Kachhadiya
  * Author URI: https://jignesh.dev
  * Text Domain: wp-servsec
  * Domain Path: /languages/
