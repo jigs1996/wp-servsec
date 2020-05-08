@@ -73,7 +73,7 @@ class SVS_Admin_Menu
 	public function display_dashboard()
 	{
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
-		$test = new HeaderTest( 'https://google.com' );
+		$test = new HeaderTest( home_url() );
 		$results = $test->runAll();
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}

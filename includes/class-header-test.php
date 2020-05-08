@@ -77,9 +77,11 @@ class HeaderTest
         curl_setopt($curl, CURLOPT_URL, $this->host);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_FRESH_CONNECT, true);
-    	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_HEADER, 1);	
-
+    	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($curl, CURLOPT_CERTINFO, 1);
+        curl_setopt($curl, CURLOPT_CAPATH, 1);	
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
         $this->resources = curl_exec( $curl );
 
         $header_size = curl_getinfo($curl, CURLINFO_HEADER_SIZE);
