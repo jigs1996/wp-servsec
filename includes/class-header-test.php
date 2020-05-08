@@ -54,7 +54,9 @@ class HeaderTest
 
 		$this->host = $host;
 
-		$this->getResource();
+		// $this->getResource();
+		
+		$this->headers = $this->getHeadersFromHost();
 	}
 
 	/**
@@ -164,22 +166,27 @@ class HeaderTest
 	 * @method    getHeaders [ extract headers from resources ]
 	 * @return    array [return array of headers]
 	 */
-	private function getHeaders($respHeaders)
+	private function getHeadersFromHost()
 	{
-	    $headers = array();
+		$context_array = [
+			'http' => [
+				'method' => 'GET',
+				'header' => [
+					'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+					'Accept-Encoding: gzip, deflate',
+					'Accept-Language: en-US,en;q=0.9',
+					'Connection: keep-alive'
+				]
+			]
+		];
 
-	    $headerText = substr($respHeaders, 0, strpos($respHeaders, "\r\n\r\n"));
+		$context = stream_context_create( $context_array );
 
-	    foreach (explode("\r\n", $headerText) as $i => $line) {
-	        if ($i === 0) {
-	            $headers['http_code'] = $line;
-	        } else {
-	            list ($key, $value) = explode(': ', $line);
+	    return get_headers( $this->host, 1, $context);
+	}
 
-	            $headers[$key] = $value;
-	        }
-	    }
-
-	    return $headers;
+	public function getHeaders()
+	{
+		return $this->headers;
 	}
 }

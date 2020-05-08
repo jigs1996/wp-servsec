@@ -95,8 +95,9 @@ class SVS_Admin_Menu
 	public function display_dashboard()
 	{
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
-		$test = new HeaderTest( home_url() );
+		$test = new HeaderTest( 'https://twitter.com' );
 		$results = $test->runAll();
+		$headers = $test->getHeaders();
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}
 
