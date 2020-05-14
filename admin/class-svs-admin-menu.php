@@ -95,9 +95,19 @@ class SVS_Admin_Menu
 	public function display_dashboard()
 	{
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
-		$test = new HeaderTest( 'https://twitter.com' );
+		require_once PLUGIN_ROOT_PATH . '/includes/class-ssl-info.php';
+
+		$host = 'https://twitter.com';
+
+		$test = new HeaderTest( $host );
 		$results = $test->runAll();
 		$headers = $test->getHeaders();
+
+		$ssl_obj = new SSL_Info( $host );
+		$ssl_info = $ssl_obj->getSSLInfo();
+
+		// $cert_chain = $ssl_obj->getCertChain();
+
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
 	}
 
