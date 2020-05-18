@@ -97,7 +97,7 @@ class SVS_Admin_Menu
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
 		require_once PLUGIN_ROOT_PATH . '/includes/class-ssl-info.php';
 
-		$host = 'https://devnetwork.io';
+		$host = home_url();
 
 		$test = new HeaderTest( $host );
 		$headers = $test->getHeaders();
@@ -105,7 +105,7 @@ class SVS_Admin_Menu
 
 		$ssl_obj = new SSL_Info( $host );
 		$ssl_info = $ssl_obj->getSSLInfo();
-		
+
 		// $cert_chain = $ssl_obj->getCertChain();
 
 		require_once PLUGIN_ROOT_PATH . '/admin/partials/dashboard.php';
