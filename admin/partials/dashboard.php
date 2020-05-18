@@ -113,6 +113,7 @@
 		<div class="svs-head">
 			<h2>Certificate Information</h2>
 		</div>
+		<?php if( !empty($ssl_info) ): ?>
 		<div class="svs-accordian-section">
 			<div class="svs-accordian-wrapper">
 				<div class="svs-accordian-title">
@@ -182,6 +183,7 @@
 				</div>
 			</div> -->
 		</div>
+		<?php endif; ?>
 	</div>
 	<div class="svs-footer"></div>
 </div>

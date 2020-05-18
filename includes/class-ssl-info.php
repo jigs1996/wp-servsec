@@ -44,15 +44,6 @@ class SSl_Info
 	private $resources;
 
 	/**
-	 * SSL information get from certificate info send by server
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      array    $ssl_info
-	 */	
-	private $ssl_info;
-
-	/**
 	 * Certificate chain get from certificate info send by server
 	 *
 	 * @since    1.0.0
@@ -64,11 +55,9 @@ class SSl_Info
 	public function __construct( $host )
 	{
 		$this->host       = parse_url( $host, PHP_URL_HOST);
-		$this->stream     = $this->getServerResponse();
-		$this->resources  = stream_context_get_params( $this->stream );
-		$this->meta_info  = stream_get_meta_data( $this->stream );
-		$this->ssl_info   = $this->processSSLInfo();
-		$this->cert_chain = $this->processCertChain();
+		$this->stream     = !empty( $this->isSSLAvailable() )?$this->getServerResponse():false;
+		$this->resources  = !empty( $this->isSSLAvailable() )?stream_context_get_params( $this->stream ):false;
+		$this->meta_info  = !empty( $this->isSSLAvailable() )?stream_get_meta_data( $this->stream ):false;
 	}
 
 	public function getServerResponse()
@@ -107,9 +96,11 @@ class SSl_Info
 		return array_filter( explode('Full Name: URI:', $crl_String) );
 	}
 	private function processSSLInfo()
-	{
+	{	
+		if( empty($this->resources) )
+			return false;
+
 		$sslinfo = openssl_x509_parse( $this->resources['options']['ssl']['peer_certificate'] );
-		
 		$processedInfo = [
 			'subject' => [
 				'name' => $sslinfo['subject']['CN'],
@@ -142,11 +133,19 @@ class SSl_Info
 
 	public function getSSLInfo()
 	{	
-		return $this->ssl_info;
+		return $this->processSSLInfo();
+	}
+
+	public function isSSLAvailable()
+	{
+		return !empty(is_ssl( $this->host ))?true:false;	
 	}
 
 	private function processCertChain()
 	{
+		if( empty($this->resources) )
+			return false;
+		
 		$cert_chain = [];
 		foreach ($this->resources['options']['ssl']['peer_certificate_chain'] as $ctchain) {
 			$cert_chain[] = openssl_x509_parse( $ctchain );
@@ -156,6 +155,6 @@ class SSl_Info
 	}
 	public function getCertChain()
 	{
-		return $this->cert_chain;
+		return $this->processCertChain();
 	}
 }
