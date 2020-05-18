@@ -48,7 +48,7 @@ class HeaderTest
 		
 	function __construct( $host )
 	{
-		$this->$objs = array();
+		$this->objs = array();
 
 		$this->headers = array();
 

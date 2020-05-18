@@ -66,7 +66,7 @@ abstract class Header implements HeaderInterface
 	 */
 	public function getValue()
 	{
-		return $this->headers[$this->getKey()];
+		return !empty($this->headers[$this->getKey()])?$this->headers[$this->getKey()]:'';
 	}
 
 	/**
