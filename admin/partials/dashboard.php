@@ -166,7 +166,7 @@
 					<span>CRl</span><span><?= implode('<br>', $ssl_info['cri']) ?></span>
 				</div>
 			</div>
-			<div class="svs-accordian-wrapper">
+			<!-- <div class="svs-accordian-wrapper">
 				<div class="svs-accordian-title">
 					<span>OCSP</span><span></span>
 				</div>
@@ -180,7 +180,7 @@
 				<div class="svs-accordian-title">
 					<span>Supports OCSP Stapling</span><span></span>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div class="svs-footer"></div>

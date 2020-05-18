@@ -97,7 +97,7 @@ class SVS_Admin_Menu
 		require_once PLUGIN_ROOT_PATH . '/includes/class-header-test.php';
 		require_once PLUGIN_ROOT_PATH . '/includes/class-ssl-info.php';
 
-		$host = 'https://twitter.com';
+		$host = home_url();
 
 		$test = new HeaderTest( $host );
 		$results = $test->runAll();
