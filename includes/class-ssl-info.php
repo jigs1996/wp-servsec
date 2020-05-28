@@ -1,6 +1,7 @@
 <?php
 /**
- * Get ssl information
+ * class SSl_Info
+ * 
  * @since      	1.0.0
  * @package 	wp-servsec
  * @subpackage 	wp-servsec/includes
@@ -70,6 +71,15 @@ class SSl_Info
 		$this->meta_info  = $this->isSSLAvailable() ? stream_get_meta_data( $this->stream ) : false;
 	}
 
+	/**
+	 * send request to server to with certificate,
+	 * which will respons with ssl certificate information
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   getServerResponse
+	 * @return   array [ server response]
+	 */
 	public function getServerResponse()
 	{
 		$ssloptions = [
@@ -92,6 +102,15 @@ class SSl_Info
 	
 	}
 
+	/**
+	 * get certificate key size
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   getCertKeySize
+	 * @param    resource $cert_resource
+	 * @return   int [ return certificate algorithm key size in bits ]
+	 */
 	private function getCertKeySize($cert_resource)
 	{
 		$key = openssl_pkey_get_public($cert_resource);
@@ -99,14 +118,33 @@ class SSl_Info
 		return $certinfo['bits'];
 	}
 
-	public function getCRI( $crl )
+	/**
+	 * extract curi from crlDistributionPoints value
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   getCRI
+	 * @param    array $crl
+	 * @return   array [ return array of curi ]
+	 */
+	private function getCRI( $crl )
 	{
 		if(empty($crl['extensions']['crlDistributionPoints']))
 			return '';
 
-		$crl_String = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "", $crl) );
+		$crl_String = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "", $crl['extensions']['crlDistributionPoints']) );
+
 		return array_filter( explode('Full Name: URI:', $crl_String) );
 	}
+
+	/**
+	 * get processed array of ssl info
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   processSSLInfo
+	 * @return   array [ return processed array of ssl info ]
+	 */
 	private function processSSLInfo()
 	{	
 		if( empty($this->resources) )
@@ -132,6 +170,15 @@ class SSl_Info
 		return $processedInfo;
 	}
 
+	/**
+	 * get processed array of ssl info
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   getSSLSubject
+	 * @param    array  $sslinfo
+	 * @return   array [ return details of domain ssl sender ]
+	 */
 	private function getSSLSubject( $sslinfo ){
 
 		$location = '';
@@ -153,6 +200,15 @@ class SSl_Info
 			];
 	}
 
+	/**
+	 * get processed array of ssl info
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   getSSLIssuer
+	 * @param    array  $sslinfo
+	 * @return   array [ return details of domain ssl issuer ]
+	 */
 	private function getSSLIssuer( $sslinfo ){
 
 		return [
@@ -163,11 +219,27 @@ class SSl_Info
 			];
 	}
 
+	/**
+	 * invocke method who made private mehod call
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   getSSLInfo
+	 * @return   array [ invocke method who made private mehod call ]
+	 */
 	public function getSSLInfo()
 	{	
 		return $this->processSSLInfo();
 	}
 
+	/**
+	 * check site is secure with ssl or not
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   isSSLAvailable
+	 * @return   array [ ssl available or not on url ]
+	 */
 	public function isSSLAvailable()
 	{
 		$host_part = explode('://', $this->host);
@@ -175,6 +247,14 @@ class SSl_Info
 		return ( $host_part[0] == 'https' ) ? true : false;	
 	}
 
+	/**
+	 * extract certification chain
+	 * WIP
+	 * @since    1.0.0
+	 * @access   private
+	 * @method   processCertChain
+	 * @return   array [ ]
+	 */
 	private function processCertChain()
 	{
 		if( empty($this->resources) )
@@ -187,6 +267,15 @@ class SSl_Info
 
 		return $cert_chain; 
 	}
+
+	/**
+	 * check site is secure with ssl or not
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @method   getCertChain
+	 * @return   array [ ]
+	 */
 	public function getCertChain()
 	{
 		return $this->processCertChain();

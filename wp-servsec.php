@@ -5,18 +5,12 @@
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
  *
  * @wordpress-plugin
- * Plugin Name: WP Server Security
- * Plugin URI: https://devnetwork.io
- * Description: This plugin will scan your server and send you report for necessory security header missing and ssl/tls certificates info and expiration date
+ * Plugin Name: WP Headders/SSL Info
+ * Description: This plugin will scan your request/response and give you report of necessary security headers and SSL certificate info and expiration date
  * Version: 1.0.0
  * Author: Jignesh Sanghani, Rahul Kachhadiya
- * Author URI: https://jignesh.dev
  * Text Domain: wp-servsec
- * Domain Path: /languages/
  * License: GPL v3
- *
- * SVS requires at least: 3.0
- * SVS tested up to: 3.9
  *
  * Wp server security is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

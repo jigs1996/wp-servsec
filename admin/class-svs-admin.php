@@ -5,7 +5,7 @@
  *
  * @since      1.0.0
  * @package    wp-servsec
- * @subpackage wp-servsec/includes
+ * @subpackage wp-servsec/admin
  */
 class SVS_Admin
 {

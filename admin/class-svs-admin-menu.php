@@ -4,7 +4,7 @@
  * SVS_Admin_Menu is responsiible for creating admin menu and submenu
  * @since      1.0.0
  * @package    wp-servsec
- * @subpackage wp-servsec/includes
+ * @subpackage wp-servsec/admin
  */
 class SVS_Admin_Menu
 {
