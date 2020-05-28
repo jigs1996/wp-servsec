@@ -5,7 +5,8 @@
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
  *
  * @wordpress-plugin
- * Plugin Name: WP Headders/SSL Info
+ * Plugin Name: WP Headers/SSL Info
+ * Plugin uri: https://github.com/jigs1996/wp-servsec
  * Description: This plugin will scan your request/response and give you report of necessary security headers and SSL certificate info and expiration date
  * Version: 1.0.0
  * Author: Jignesh Sanghani, Rahul Kachhadiya
