@@ -1,7 +1,7 @@
 <div class="wrap">
 	<div class="svs-tophead">
-		<h2>Request Information</h2>
-		<div class="svs-status">Good</div>
+		<h2>WP Headers/SSL</h2>
+		<!-- <div class="svs-status">Good</div> -->
 	</div>
 	<div class="svs-body">
 		<div class="svs-head">
